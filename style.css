@@ -1,0 +1,574 @@
+* {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800; /* Bold */
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+footer {
+    margin-top: -50px;
+    background-color: #333;
+    padding: 50px 50px;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 90px 0px;
+}
+
+.carousel {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollLinear 45s linear infinite;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    min-width: 350px;
+    margin-right: 200px;
+    border-radius: 40px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.review-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.review-text {
+    padding: 10px;
+}
+
+@keyframes scrollLinear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding-top: 20px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-container {
+    text-align: center; /* Центрирование содержимого */
+    margin: auto;
+    margin-top: 150px; /* Отступ сверху в 100 пикселей */
+    display: table; /* Позволяет контейнеру соответствовать ширине содержимого */
+}
+
+.left-block, .right-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-image {
+    width: 120px;
+    margin-right: 20px;
+}
+
+.sub-image {
+    width: 25px;
+    border-radius: 10px;
+}
+
+.sub-block span {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sub-block {
+    border-radius: 20px; /* Скругление краев */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Обычная тень */
+    display: inline-flex; /* Для выравнивания содержимого внутри */
+    align-items: center;
+    margin: 0 10px 0 0; /* Отступы между блоками */
+    padding: 10px; /* Внутренний отступ в блоках */
+}
+
+.top-line a {
+    text-decoration: none;
+    color: white;
+}
+
+.sub-block:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.bottom-line p {
+    display: inline-block;
+    text-align: left;
+}
+
+.bottom-line {
+    margin: 0 0 10px 20px;
+}
+
+#bill {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.content-block {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание по центру */
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.image-part {
+    flex: 1; /* Занимает половину родительского блока */
+    display: flex;
+    align-items: center; /* Для дополнительного вертикального выравнивания */
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+}
+
+.image-part img {
+    padding: 10%;
+    max-width: 80%; /* Чтобы изображение не выходило за пределы блока */
+    height: auto; /* Сохранение пропорций изображения */
+}
+
+.text-part {
+    flex: 1; /* Занимает оставшуюся половину родительского блока */
+    display: flex;
+    flex-direction: column; /* Стек элементов вертикально */
+    justify-content: center; /* Вертикальное выравнивание по центру */
+    margin-top: 50px;
+    padding: 0 20px; /* Отступы внутри текстовой части */
+}
+
+.text-part > * { /* Применяется ко всем непосредственным детям .text-part */
+    text-align: center; /* Горизонтальное выравнивание текста по центру */
+    align-self: center; /* Горизонтальное выравнивание блоков по центру, если это flex-элементы */
+}
+
+.text-part h2 {
+    margin-bottom: 20px;
+}
+
+.orange-button {
+    padding: 10px 20px; /* Размеры кнопки */
+    font-size: 1em; /* Размер текста в кнопке */
+    color: orange; /* Цвет текста кнопки */
+    background-color: white; /* Фон кнопки */
+    border: 2px solid orange; /* Граница кнопки */
+    border-radius: 5px; /* Скругление углов кнопки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень кнопки */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    margin-top: 20px; /* Отступ сверху */
+    transition: all 0.3s ease; /* Плавное изменение при наведении */
+}
+
+.orange-button:hover {
+    background-color: orange; /* Изменение фона при наведении */
+    color: white; /* Изменение цвета текста при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Усиление тени при наведении */
+}
+
+.text-overlay h1 {
+    font-size: 6em;
+    margin-left: 5%;
+    text-align: left;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+
+.text-overlay p {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    position: absolute;
+    top: 0;
+    font-size: 1.75em;
+    text-shadow: 4px 4px 4px #FFA50075; 
+    animation: slideUp 1s ease-out forwards;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 35px;
+    right: 100px;
+    z-index: 3;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    padding: 5px 15px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(0,0,0,0);
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.lang-dropdown a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+
+.lang-dropdown a:hover {
+    background-color: #333;
+    border-radius: 20px;
+}
+
+.lang-btn:hover .lang-dropdown {
+    display: block;
+}
+
+.language-switcher:hover .lang-dropdown {
+    display: block;
+}
+
+.location-switcher {
+    padding: 7px 0px;
+    position: absolute;
+    top: 35px;
+    right: 200px;
+    z-index: 3;
+}
+
+.location-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.location-dropdown {
+    display: none; /* Оставляем display: none для начального состояния */
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 0px;
+    background-color: #333;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    opacity: 0; /* Начальная прозрачность */
+    transition: opacity 0.5s ease; /* Плавное изменение только прозрачности */
+}
+
+.location-dropdown, .location-dropdown a {
+    color: white;
+}
+
+.location-switcher:hover .location-dropdown {
+    display: block;
+}
+
+.location-btn:hover .location-dropdown {
+    display: block;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.cell.filled.noshadow .material-icons {
+    font-size: 24px;
+    margin-left: 7px;
+}
+
+.telegram-link {
+    position: absolute;
+    display: inline-flex; /* Изменено на inline-flex для правильного выравнивания дочерних элементов */
+    overflow: hidden;
+    width: 65px; /* Начальная ширина, равная ширине иконки */
+    height: 65px; /* Установка высоты, равной высоте иконки */
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.telegram-link a {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-decoration: none;
+    width: 100%;
+}
+
+.telegram-link img {
+    transition: transform 1s ease;
+    z-index: 5;
+    border-radius: 50%;
+    animation: slideUp 1s ease-out forwards;
+}
+
+.telegram-text {
+    color: white;
+    padding: 0px 10px;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s linear 0.5s;
+}
+
+.telegram-link:hover {
+    width: 220px;
+    height: 65px;
+    background-color: #333;
+    border-radius: 37.5px;
+}
+
+.telegram-link:hover img {
+    transform: translateX(0px);
+    width: 65px;
+    height: 65px;
+}
+
+.telegram-link:hover .telegram-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service h2, #bill h2, #cash h2, #bank h2 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.15em;
+}
+
+main {
+    margin-top: -10px;
+    padding: 50px 0px;
+    color: #fff;
+    background-color: #333;
+}
+
+.service {
+    padding: 0px 100px;
+}
+
+.table {
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.table.big {
+    margin-bottom: 100px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33.33%;
+    margin: 25px;
+    padding: 25px;
+}
+
+.cell.text {
+    width: 33.3%;
+    justify-content: center;
+    padding: 0;
+}
+
+.green {
+    color: #2E8B57;
+}
+
+.red {
+    color: #B22222;
+}
+
+.orange {
+    color: orange;
+}
+
+.center {
+    text-align: center;
+    padding: 20px;
+}
+
+.cell.text.left {
+    width: 33.3%;
+    justify-content: left;
+}
+
+.cell.filled {
+    border: none;
+    border-radius: 40px;
+    justify-content: center;
+    padding: 15px 40px;
+}
+
+.cell.filled.shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px orange;
+}
+
+.cell.filled.shadow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cell img {
+    height: 50px;
+    margin-left: 10px;
+}
+
+.cell.filled:first-child {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 33.3%;
+    border: none;
+    justify-content: center;
+}
+
+.cell.filled.nowrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell.filled.nowrap p {
+    width: 100%;
+    text-align: center;
+}
+
+.cell.filled:not(:first-child) {
+    width: 33.3%;
+}
+
+.cell.filled .material-icons {
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+
+.cell-link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.cell.filled.noshadow {
+    border: none;
+    color: orange;
+    border-radius: 35px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 20px 75px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.cell.filled.noactive {
+    border: none;
+    color: orange;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+}
+
+.cell.filled.noshadow:hover {
+    transform: scale(1.075);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.cell.filled.noactive:hover {
+    transform: none;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
